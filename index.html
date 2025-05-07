@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Joias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Loja de Joias</h1>
+        <nav>
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="https://wa.me/8494740642?text=Olá%2C%20quero%20ver%20seu%20catálogo" target="_blank">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalogo">
+            <h2>Catálogo de Produtos</h2>
+            <div class="produto">
+                <h3>Colar de Pérolas</h3>
+                <p>Preço: R$ 150,00</p>
+                <button onclick="finalizarCompra('Colar de Pérolas', 150)">Comprar</button>
+            </div>
+            <div class="produto">
+                <h3>Anel de Ouro</h3>
+                <p>Preço: R$ 300,00</p>
+                <button onclick="finalizarCompra('Anel de Ouro', 300)">Comprar</button>
+            </div>
+            <div class="produto">
+                <h3>Brincos de Prata</h3>
+                <p>Preço: R$ 100,00</p>
+                <button onclick="finalizarCompra('Brincos de Prata', 100)">Comprar</button>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato para Finalizar a Compra</h2>
+            <form id="form-contato" onsubmit="enviarWhatsApp(event)">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="numero">Número de Contato:</label>
+                <input type="text" id="numero" name="numero" required>
+                
+                <label for="produto">Produto:</label>
+                <input type="text" id="produto" name="produto" readonly>
+                
+                <label for="preco">Preço:</label>
+                <input type="text" id="preco" name="preco" readonly>
+                
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Loja de Joias. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function finalizarCompra(produto, preco) {
+            document.getElementById('produto').value = produto;
+            document.getElementById('preco').value = 'R$ ' + preco.toFixed(2);
+            window.scrollTo(0, document.getElementById('contato').offsetTop);
+        }
+
+        function enviarWhatsApp(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById('nome').value;
+            const numero = document.getElementById('numero').value;
+            const produto = document.getElementById('produto').value;
+            const preco = document.getElementById('preco').value;
+
+            const mensagem = `Olá, meu nome é ${nome}. Gostaria de comprar ${produto} por ${preco}. Meu número de contato é ${numero}.`;
+            const numeroWhatsApp = '8494740642'; // Seu número de WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(linkWhatsApp, '_blank'); // Abre o WhatsApp em uma nova aba
+        }
+    </script>
+</body>
+</html>
