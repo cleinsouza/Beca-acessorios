@@ -3,20 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Loja de Joias</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white p-4">
-        <h1 class="text-2xl">Bem-vindo ao Meu Site</h1>
+<body>
+    <header>
+        <h1>Loja de Joias</h1>
+        <nav>
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="https://wa.me/8494740642?text=Olá%2C%20quero%20ver%20seu%20catálogo" target="_blank">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-    <main class="p-4">
-        <h2 class="text-xl">Conteúdo Principal</h2>
-        <p>Este é um exemplo de site construído com Tailwind CSS.</p>
+
+    <main>
+        <section id="filtros">
+            <h2>Filtrar por:</h2>
+
+            <div class="filtro-grupo">
+                <h3>Tipo de Joia</h3>
+                <label><input type="checkbox" name="tipo" value="colar"> Colares</label><br>
+                <label><input type="checkbox" name="tipo" value="anel"> Anéis</label><br>
+                <label><input type="checkbox" name="tipo" value="brinco"> Brincos</label><br>
+                <label><input type="checkbox" name="tipo" value="pulseira"> Pulseiras</label><br>
+            </div>
+
+            <button onclick="filtrarProdutos()">Filtrar</button>
+            <button onclick="resetarFiltros()">Limpar Filtros</button>
+        </section>
+
+        <section id="catalogo">
+            <h2>Catálogo de Produtos</h2>
+
+            <div class="produto">
+                <img src="img/WhatsApp Image 2025-05-07 at 20.28.49.jpeg" alt="argola">
+                <h3> Brinco Argola com zirconias</h3>
+                <p>Preço: R$ 46,99 </p>
+                <button onclick="finalizarCompra('Argola com zirconias', 46.99)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="img/WhatsApp Image 2025-05-07 at 20.28.39.jpeg" alt="Brinco Argola Cravejada">
+                <h3>Brinco Argola Cravejada</h3>
+                <p>Preço: R$ 46,99</p>
+                <button onclick="finalizarCompra('Brinco Argola Cravejada', 46.99)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="img/WhatsApp Image 2025-05-07 at 20.28.36.jpeg" alt="Argola Delicada">
+                <h3>Brinco Argola Delicada</h3>
+                <p>Preço: R$ 24,99</p>
+                <button onclick="finalizarCompra('Brinco Argola Delicada', 24.99)">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="img/WhatsApp Image 2025-05-07 at 20.28.53.jpeg" alt="Argola Diamantada">
+                <h3>Brinco Argola Diamantada</h3>
+                <p>Preço: R$ 24,99</p>
+                <button onclick="finalizarCompra('Brinco Argola Diamantada', 24.99)">Comprar</button>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato para Finalizar a Compra</h2>
+            <form id="form-contato" onsubmit="enviarWhatsApp(event)">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="numero">Número de Contato:</label>
+                <input type="text" id="numero" name="numero" required>
+
+                <label for="produto">Produto:</label>
+                <input type="text" id="produto" name="produto" readonly>
+
+                <label for="preco">Preço:</label>
+                <input type="text" id="preco" name="preco" readonly>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
     </main>
-    <footer class="bg-blue-600 text-white p-4 text-center">
-        <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+
+    <footer>
+        <p>&copy; 2025 Loja de Joias. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function finalizarCompra(produto, preco) {
+            document.getElementById('produto').value = produto;
+            document.getElementById('preco').value = 'R$ ' + preco.toFixed(2);
+            window.scrollTo(0, document.getElementById('contato').offsetTop);
+        }
+
+        function enviarWhatsApp(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById('nome').value;
+            const numero = document.getElementById('numero').value;
+            const produto = document.getElementById('produto').value;
+            const preco = document.getElementById('preco').value;
+
+            const mensagem = `Olá, meu nome é ${nome}. Gostaria de comprar ${produto} por ${preco}. Meu número de contato é ${numero}.`;
+            const numeroWhatsApp = '8494740642'; // Seu número de WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(linkWhatsApp, '_blank'); // Abre o WhatsApp em uma nova aba
+        }
+
+        function filtrarProdutos() {
+            const filtrosTipo = Array.from(document.querySelectorAll('input[name="tipo"]:checked')).map(checkbox => checkbox.value);
+
+            const produtos = document.querySelectorAll('.produto');
+
+            produtos.forEach(produto => {
+                const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
+
+                let tipoMatch = filtrosTipo.length === 0 || filtrosTipo.some(tipo => nomeProduto.includes(tipo));
+
+                if (tipoMatch) {
+                    produto.style.display = 'block';
+                } else {
+                    produto.style.display = 'none';
+                }
+            });
+        }
+
+        function resetarFiltros() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+            filtrarProdutos(); // Reexibe todos os produtos
+        }
+
+        // Adicione os tipos aos seus produtos existentes no HTML
+        document.addEventListener('DOMContentLoaded', () => {
+            const produtos = document.querySelectorAll('.produto');
+            produtos.forEach(produto => {
+                const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
+                if (nomeProduto.includes('colar')) produto.dataset.tipo = 'colar';
+                if (nomeProduto.includes('anel')) produto.dataset.tipo = 'anel';
+                if (nomeProduto.includes('brinco')) produto.dataset.tipo = 'brinco';
+                if (nomeProduto.includes('pulseira')) produto.dataset.tipo = 'pulseira';
+                if (nomeProduto.includes('argola')) produto.dataset.tipo = 'brinco'; // Para a argola ser filtrada como brinco
+            });
+            filtrarProdutos(); // Garante que a filtragem inicial mostre todos os produtos
+        });
+    </script>
 </body>
 </html>
