@@ -1,304 +1,449 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Joias</title>
+    <title>Loja da Beca</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Loja de Joias</h1>
+        <h1>Loja da Beca</h1>
         <nav>
             <ul>
-                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="https://drive.google.com/drive/folders/14Ec2ghEBx_7R4I7sXmJRGnd6W1FrvLWx" target="_blank">Acesse aqui para ver as peças com mais detalhes!</a></li>
+                <li><a href="#carrinho">Carrinho (<span id="carrinho-quantidade">0</span>)</a></li>
                 <li><a href="https://wa.me/8494740642?text=Olá%2C%20quero%20ver%20seu%20catálogo" target="_blank">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <div class="conteudo-principal">
         <section id="filtros">
             <h2>Filtrar por:</h2>
-
             <div class="filtro-grupo">
                 <h3>Tipo de Joia</h3>
-                <label><input type="checkbox" name="tipo" value="colar"> Colares</label><br>
-                <label><input type="checkbox" name="tipo" value="anel"> Anéis</label><br>
                 <label><input type="checkbox" name="tipo" value="brinco"> Brincos</label><br>
+                <label><input type="checkbox" name="tipo" value="colar"> Colares</label><br>
+                <label><input type="checkbox" name="tipo" value="aneis"> Aneis</label><br>
                 <label><input type="checkbox" name="tipo" value="pulseira"> Pulseiras</label><br>
             </div>
-
             <button onclick="filtrarProdutos()">Filtrar</button>
             <button onclick="resetarFiltros()">Limpar Filtros</button>
         </section>
 
         <section id="catalogo">
-            <h2>Catálogo de Produtos</h2>
+            <h2>Escolha Seu Produto Aqui!</h2>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Argola com zirconias" data-preco="46.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.50.jpeg" alt="argola">
+                        <h3> Brinco Argola com zirconias</h3>
+                        <p>Preço: R$ 46,99 </p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Argola Cravejada" data-preco="46.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.39.jpeg" alt="Brinco Argola Cravejada">
+                        <h3>Brinco Argola Cravejada</h3>
+                        <p>Preço: R$ 46,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Argola Delicada" data-preco="24.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.36.jpeg" alt="Argola Delicada">
+                        <h3>Brinco Argola Delicada</h3>
+                        <p>Preço: R$ 24,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Argola Diamantada" data-preco="24.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.53.jpeg" alt="Argola Diamantada">
+                        <h3>Brinco Argola Diamantada</h3>
+                        <p>Preço: R$ 24,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Argola Torcida" data-preco="29.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.43.jpeg" alt="Argola Torcida">
+                        <h3>Brinco Argola Torcida</h3>
+                        <p>Preço: R$ 29,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Minimalista" data-preco="24.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.31.jpeg" alt="Argola Minimalista">
+                        <h3>Brinco Minimalista</h3>
+                        <p>Preço: R$ 24,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Gota" data-preco="46.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.47.jpeg" alt="brinco Gota">
+                        <h3>Brinco Gota</h3>
+                        <p>Preço: R$ 46,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco lua" data-preco="34.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.37.jpeg" alt="brinco lua">
+                        <h3>Brinco lua </h3>
+                        <p>Preço: R$ 34,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Trevo" data-preco="35.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.45.jpeg" alt="brinco Trevo">
+                        <h3>Brinco Trevo </h3>
+                        <p>Preço: R$ 35,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Brinco Trio Argolas" data-preco="65.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.49.jpeg" alt="brinco Trio">
+                        <h3>Brinco Trio Argolas </h3>
+                        <p>Preço: R$ 65,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="brincos" data-nome="Trio De Brincos" data-preco="38.99">
+                    <div class="produto-content">
+                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.51.jpeg" alt="Trio">
+                        <h3>Trio De Brincos </h3>
+                        <p>Preço: R$ 38,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto" data-tipo="colar" data-nome="Colar Choker Cartier Fina" data-preco="35.99">
+                    <img src=".img/Choker-Cartier-fina-_-35_99.jpg" alt="Choker">
+                    <div class="produto-content">
+                        <h3>Colar Choker Cartier Fina </h3>
+                        <p>Preço: R$ 35,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="colar" data-nome="Colar Clássico" data-preco="44.99">
+                    <img src=".img/Colar-clássico-_-44_99.jpg" alt="Colar-clássico-_-44_99">
+                    <div class="produto-content">
+                        <h3>Colar Clássico </h3>
+                        <p>Preço: R$ 44,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="colar" data-nome="Colar Cravejado" data-preco="65.99">
+                    <img src=".img/Colar-cravejado-_-65_99.jpg" alt="Colar Cravejado">
+                    <div class="produto-content">
+                        <h3>Colar Cravejado </h3>
+                        <p>Preço: R$ 65,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="colar" data-nome="Colar Fita" data-preco="46.99">
+                    <img src=".img/Colar-fita-_-46_99.jpg" alt="Colar Fita">
+                    <div class="produto-content">
+                        <h3>Colar Fita </h3>
+                        <p>Preço: R$ 46,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+            
+                <div class="produto" data-tipo="colar" data-nome="Colar Tiffany & co" data-preco="46.99">
+                    <img src=".img/Colar-Tiffany-_-Co-_-46_99.jpg" alt="Colar Tiffany's">
+                    <div class="produto-content">
+                        <h3>Colar Tiffany & co </h3>
+                        <p>Preço: R$ 46,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="colar" data-nome="Colar Trevo" data-preco="44.99">
+                    <img src=".img/Colar-trevo-_-44_99.jpg" alt="Colar Trevo">
+                    <div class="produto-content">
+                        <h3>Colar Trevo  </h3>
+                        <p>Preço: R$ 44,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Berloque Separador Cravejado" data-preco="36.99">
+                    <img src=".img/Berloque separador cravejado _ 36,99.jpg" alt="Berloque Separador Cravejado">
+                    <div class="produto-content">
+                        <h3>Berloque Separador Cravejado  </h3>
+                        <p>Preço: R$ 36,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Berloque Separador Rosa" data-preco="36.99">
+                    <img src=".img/Berloque separador rosa _ 36,99.jpg" alt="Berloque Separador Rosa">
+                    <div class="produto-content">
+                        <h3>Berloque Separador Rosa </h3>
+                        <p>Preço: R$ 36,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Berloque Vestido Ariel" data-preco="35.99">
+                    <img src=".img/Berloque separador cravejado _ 36,99.jpg" alt="Berloque vestido Ariel">
+                    <div class="produto-content">
+                        <h3>Berloque Vestido Ariel  </h3>
+                        <p>Preço: R$ 35,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira Bracelete" data-preco="44.99">
+                    <img src=".img/Pulseira bracelete _ 44,99.jpg" alt="Pulseira Bracelete">
+                    <div class="produto-content">
+                        <h3>Pulseira Bracelete </h3>
+                        <p>Preço: R$ 44,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira Correntaria" data-preco="26.99">
+                    <img src=".img/Pulseira correntaria _ 26,99.jpg" alt="Pulseira Correntaria">
+                    <div class="produto-content">
+                        <h3>Pulseira Correntaria </h3>
+                        <p>Preço: R$ 26,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira De Berloques" data-preco="67.99">
+                    <img src=".img/Pulseira de berloques _ 67,99.jpg" alt="Pulseira de berloques">
+                    <div class="produto-content">
+                        <h3>Pulseira De Berloques  </h3>
+                        <p>Preço: R$ 67,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira Delicada Grossa" data-preco="24.99">
+                    <img src=".img/Pulseira delicada _ 24,99.jpg" alt="Pulseira Delicada">
+                    <div class="produto-content">
+                        <h3>Pulseira Delicada Grossa </h3>
+                        <p>Preço: R$ 24,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira Delicada Fina" data-preco="26.99">
+                    <img src=".img/Pulseira delicada _ 26,99.jpg" alt="Pulseira Delicada">
+                    <div class="produto-content">
+                        <h3>Pulseira Delicada Fina  </h3>
+                        <p>Preço: R$ 26,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira Trevo" data-preco="55.99">
+                    <img src=".img/Pulseira trevo _ 55,99.jpg" alt="Pulseira Trevo">
+                    <div class="produto-content">
+                        <h3>Pulseira  Trevo </h3>
+                        <p>Preço: R$ 55,99</p>
+                    </div>
+                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                </div>
+            
+                <div class="produto" data-tipo="pulseira" data-nome="Pulseira C/3 Berloques" data-preco="45.99">
+                    <img src=".img/Pulseiras c_ 3 berloques _ 45,99.jpg" alt="Pulseira com 3 berloques">
+                    <div class="produto-content">
+                        <h3>Pulseira C/3 Berloques</h3>
+                        <p>Preço: R$ 45,99</p>
+                   </div>
+                   <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+           </div>
+         </section>
 
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.49.jpeg" alt="argola">
-                <h3> Brinco Argola com zirconias</h3>
-                <p>Preço: R$ 46,99 </p>
-                <button onclick="finalizarCompra('Argola com zirconias', 46.99)">Comprar</button>
-            </div>
+    </div>
 
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.39.jpeg" alt="Brinco Argola Cravejada">
-                <h3>Brinco Argola Cravejada</h3>
-                <p>Preço: R$ 46,99</p>
-                <button onclick="finalizarCompra('Brinco Argola Cravejada', 46.99)">Comprar</button>
-            </div>
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.36.jpeg" alt="Argola Delicada">
-                <h3>Brinco Argola Delicada</h3>
-                <p>Preço: R$ 24,99</p>
-                <button onclick="finalizarCompra('Brinco Argola Delicada', 24.99)">Comprar</button>
-            </div>
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.53.jpeg" alt="Argola Diamantada">
-                <h3>Brinco Argola Diamantada</h3>
-                <p>Preço: R$ 24,99</p>
-                <button onclick="finalizarCompra('Brinco Argola Diamantada', 24.99)">Comprar</button>
-            </div>
+        <section id="carrinho">
+            <h2>Carrinho de Compras</h2>
+            <ul id="lista-carrinho">
+                </ul>
+            <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+            <button onclick="concluirCompraCarrinho()">Concluir Compra</button>
         </section>
-
-        <section id="contato">
+    
+        <section id="contato" style="display: none;">
             <h2>Contato para Finalizar a Compra</h2>
-            <form id="form-contato" onsubmit="enviarWhatsApp(event)">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-
-                <label for="numero">Número de Contato:</label>
-                <input type="text" id="numero" name="numero" required>
-
-                <label for="produto">Produto:</label>
-                <input type="text" id="produto" name="produto" readonly>
-
-                <label for="preco">Preço:</label>
-                <input type="text" id="preco" name="preco" readonly>
-
-                <input type="submit" value="Enviar">
+            <form id="form-contato" onsubmit="enviarWhatsAppCarrinho(event)">
+                <label for="nome-carrinho">Nome:</label>
+                <input type="text" id="nome-carrinho" required>
+                <label for="rua-carrinho">Rua:</label>
+                <input type="text" id="rua-carrinho" placeholder="Nome da Rua" required>
+        
+                <label for="numero-carrinho">Número da Casa:</label>
+                <input type="text" id="numero-carrinho" required>
+        
+                <label for="ponto-referencia-carrinho">Ponto de Referência:</label>
+                <input type="text" id="ponto-referencia-carrinho">
+        
+                <label for="complemento-carrinho">Complemento (opcional):</label>
+                <input type="text" id="complemento-carrinho">
+        
+                <label for="bairro-carrinho">Bairro:</label>
+                <input type="text" id="bairro-carrinho" required>
+    
+                <label for="itens-carrinho">Itens do Carrinho:</label>
+                <textarea id="itens-carrinho" rows="5" readonly></textarea>
+    
+                <label for="total-carrinho-final">Total:</label>
+                <input type="text" id="total-carrinho-final" readonly>
+    
+                <button type="submit">Enviar Pedido</button>
             </form>
         </section>
-    </main>
-
+    
+    
     <footer>
         <p>&copy; 2025 Loja de Joias. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        function finalizarCompra(produto, preco) {
-            document.getElementById('produto').value = produto;
-            document.getElementById('preco').value = 'R$ ' + preco.toFixed(2);
-            window.scrollTo(0, document.getElementById('contato').offsetTop);
+  let carrinho = [];
+
+function adicionarAoCarrinho(botao) {
+    const produtoDiv = botao.parentNode;
+    const nome = produtoDiv.dataset.nome;
+    const preco = parseFloat(produtoDiv.dataset.preco);
+    const produtoExistente = carrinho.find(item => item.nome === nome);
+
+    if (carrinho.length >= 10) {
+        alert("Você atingiu o limite máximo de 10 itens no carrinho.");
+        return;
+    }
+
+    if (produtoExistente) {
+        produtoExistente.quantidade++;
+    } else {
+        carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
+    }
+
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    const listaCarrinho = document.getElementById('lista-carrinho');
+    const totalCarrinhoSpan = document.getElementById('total-carrinho');
+    const carrinhoQuantidadeSpan = document.getElementById('carrinho-quantidade');
+
+    listaCarrinho.innerHTML = '';
+    let total = 0;
+    let quantidadeTotal = 0;
+
+    carrinho.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.nome} x${item.quantidade} - R$ ${(item.preco * item.quantidade).toFixed(2)}`;
+        listaCarrinho.appendChild(listItem);
+        total += item.preco * item.quantidade;
+        quantidadeTotal += item.quantidade;
+    });
+
+    totalCarrinhoSpan.textContent = total.toFixed(2);
+    carrinhoQuantidadeSpan.textContent = quantidadeTotal;
+}
+
+function concluirCompraCarrinho() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio.");
+        return;
+    }
+
+    const itensCarrinhoTextarea = document.getElementById('itens-carrinho');
+    const totalCarrinhoFinalInput = document.getElementById('total-carrinho-final');
+    let mensagemItens = "";
+    let total = 0;
+
+    carrinho.forEach(item => {
+        mensagemItens += `${item.nome} (${item.quantidade}x) - R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
+        total += item.preco * item.quantidade;
+    });
+
+    itensCarrinhoTextarea.value = mensagemItens;
+    totalCarrinhoFinalInput.value = `R$ ${total.toFixed(2)}`;
+    document.getElementById('contato').style.display = 'block';
+    window.scrollTo(0, document.getElementById('contato').offsetTop);
+}
+
+function enviarWhatsAppCarrinho(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome-carrinho').value;
+    const numero = document.getElementById('numero-carrinho').value;
+    const itens = document.getElementById('itens-carrinho').value;
+    const total = document.getElementById('total-carrinho-final').value;
+
+    const mensagem = `Olá, meu nome é ${nome}. Gostaria de fazer o seguinte pedido:\n\n${itens}\nTotal: ${total}\n\nMeu número de contato é ${numero}.`;
+    const numeroWhatsApp = '8494740642';
+    const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(linkWhatsApp, '_blank');
+}
+
+function filtrarProdutos() {
+    const filtrosTipo = Array.from(document.querySelectorAll('input[name="tipo"]:checked')).map(checkbox => checkbox.value);
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+        const tipoProduto = produto.dataset.tipo;
+        let exibir = false;
+
+        if (filtrosTipo.length === 0) {
+            exibir = true; // Se nenhum filtro estiver selecionado, exibe todos
+        } else if (tipoProduto && filtrosTipo.includes(tipoProduto)) {
+            exibir = true; // Exibe se o tipo do produto estiver entre os filtros
         }
 
-        function enviarWhatsApp(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
+        produto.style.display = exibir ? 'block' : 'none';
+    });
+}
 
-            const nome = document.getElementById('nome').value;
-            const numero = document.getElementById('numero').value;
-            const produto = document.getElementById('produto').value;
-            const preco = document.getElementById('preco').value;
+function resetarFiltros() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+    filtrarProdutos(); // Reexibe todos os produtos
+}
 
-            const mensagem = `Olá, meu nome é ${nome}. Gostaria de comprar ${produto} por ${preco}. Meu número de contato é ${numero}.`;
-            const numeroWhatsApp = '8494740642'; // Seu número de WhatsApp
-            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-            window.open(linkWhatsApp, '_blank'); // Abre o WhatsApp em uma nova aba
-        }
-
-        function filtrarProdutos() {
-            const filtrosTipo = Array.from(document.querySelectorAll('input[name="tipo"]:checked')).map(checkbox => checkbox.value);
-
-            const produtos = document.querySelectorAll('.produto');
-
-            produtos.forEach(produto => {
-                const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
-
-                let tipoMatch = filtrosTipo.length === 0 || filtrosTipo.some(tipo => nomeProduto.includes(tipo));
-
-                if (tipoMatch) {
-                    produto.style.display = 'block';
-                } else {
-                    produto.style.display = 'none';
-                }
-            });
-        }
-
-        function resetarFiltros() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(checkbox => checkbox.checked = false);
-            filtrarProdutos(); // Reexibe todos os produtos
-        }
-
-        // Adicione os tipos aos seus produtos existentes no HTML
-        document.addEventListener('DOMContentLoaded', () => {
-            const produtos = document.querySelectorAll('.produto');
-            produtos.forEach(produto => {
-                const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
-                if (nomeProduto.includes('colar')) produto.dataset.tipo = 'colar';
-                if (nomeProduto.includes('anel')) produto.dataset.tipo = 'anel';
-                if (nomeProduto.includes('brinco')) produto.dataset.tipo = 'brinco';
-                if (nomeProduto.includes('pulseira')) produto.dataset.tipo = 'pulseira';
-                if (nomeProduto.includes('argola')) produto.dataset.tipo = 'brinco'; // Para a argola ser filtrada como brinco
-            });
-            filtrarProdutos(); // Garante que a filtragem inicial mostre todos os produtos
-        });
-    </script>
+document.addEventListener('DOMContentLoaded', () => {
+    const produtos = document.querySelectorAll('.produto');
+    produtos.forEach(produto => {
+        const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
+        if (nomeProduto.includes('colar')) produto.dataset.tipo = 'colar';
+        if (nomeProduto.includes('aneis')) produto.dataset.tipo = 'aneis';
+        if (nomeProduto.includes('brinco')) produto.dataset.tipo = 'brinco';
+        if (nomeProduto.includes('pulseira')) produto.dataset.tipo = 'pulseira';
+        if (nomeProduto.includes('argola')) produto.dataset.tipo = 'brinco'; // Para a argola ser filtrada como brinco
+        if (nomeProduto.includes('berloque')) produto.dataset.tipo = 'pulseira';
+    });
+    filtrarProdutos(); // Garante que a filtragem inicial mostre todos os produtos
+    atualizarCarrinho(); // Inicializa a exibição do carrinho
+});
+</script>a
 </body>
-=======
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Joias</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Loja de Joias</h1>
-        <nav>
-            <ul>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="https://wa.me/8494740642?text=Olá%2C%20quero%20ver%20seu%20catálogo" target="_blank">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="filtros">
-            <h2>Filtrar por:</h2>
-
-            <div class="filtro-grupo">
-                <h3>Tipo de Joia</h3>
-                <label><input type="checkbox" name="tipo" value="colar"> Colares</label><br>
-                <label><input type="checkbox" name="tipo" value="anel"> Anéis</label><br>
-                <label><input type="checkbox" name="tipo" value="brinco"> Brincos</label><br>
-                <label><input type="checkbox" name="tipo" value="pulseira"> Pulseiras</label><br>
-            </div>
-
-            <button onclick="filtrarProdutos()">Filtrar</button>
-            <button onclick="resetarFiltros()">Limpar Filtros</button>
-        </section>
-
-        <section id="catalogo">
-            <h2>Catálogo de Produtos</h2>
-
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.49.jpeg" alt="argola">
-                <h3> Brinco Argola com zirconias</h3>
-                <p>Preço: R$ 46,99 </p>
-                <button onclick="finalizarCompra('Argola com zirconias', 46.99)">Comprar</button>
-            </div>
-
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.39.jpeg" alt="Brinco Argola Cravejada">
-                <h3>Brinco Argola Cravejada</h3>
-                <p>Preço: R$ 46,99</p>
-                <button onclick="finalizarCompra('Brinco Argola Cravejada', 46.99)">Comprar</button>
-            </div>
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.36.jpeg" alt="Argola Delicada">
-                <h3>Brinco Argola Delicada</h3>
-                <p>Preço: R$ 24,99</p>
-                <button onclick="finalizarCompra('Brinco Argola Delicada', 24.99)">Comprar</button>
-            </div>
-            <div class="produto">
-                <img src="img/WhatsApp Image 2025-05-07 at 20.28.53.jpeg" alt="Argola Diamantada">
-                <h3>Brinco Argola Diamantada</h3>
-                <p>Preço: R$ 24,99</p>
-                <button onclick="finalizarCompra('Brinco Argola Diamantada', 24.99)">Comprar</button>
-            </div>
-        </section>
-
-        <section id="contato">
-            <h2>Contato para Finalizar a Compra</h2>
-            <form id="form-contato" onsubmit="enviarWhatsApp(event)">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-
-                <label for="numero">Número de Contato:</label>
-                <input type="text" id="numero" name="numero" required>
-
-                <label for="produto">Produto:</label>
-                <input type="text" id="produto" name="produto" readonly>
-
-                <label for="preco">Preço:</label>
-                <input type="text" id="preco" name="preco" readonly>
-
-                <input type="submit" value="Enviar">
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Loja de Joias. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        function finalizarCompra(produto, preco) {
-            document.getElementById('produto').value = produto;
-            document.getElementById('preco').value = 'R$ ' + preco.toFixed(2);
-            window.scrollTo(0, document.getElementById('contato').offsetTop);
-        }
-
-        function enviarWhatsApp(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-
-            const nome = document.getElementById('nome').value;
-            const numero = document.getElementById('numero').value;
-            const produto = document.getElementById('produto').value;
-            const preco = document.getElementById('preco').value;
-
-            const mensagem = `Olá, meu nome é ${nome}. Gostaria de comprar ${produto} por ${preco}. Meu número de contato é ${numero}.`;
-            const numeroWhatsApp = '8494740642'; // Seu número de WhatsApp
-            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-            window.open(linkWhatsApp, '_blank'); // Abre o WhatsApp em uma nova aba
-        }
-
-        function filtrarProdutos() {
-            const filtrosTipo = Array.from(document.querySelectorAll('input[name="tipo"]:checked')).map(checkbox => checkbox.value);
-
-            const produtos = document.querySelectorAll('.produto');
-
-            produtos.forEach(produto => {
-                const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
-
-                let tipoMatch = filtrosTipo.length === 0 || filtrosTipo.some(tipo => nomeProduto.includes(tipo));
-
-                if (tipoMatch) {
-                    produto.style.display = 'block';
-                } else {
-                    produto.style.display = 'none';
-                }
-            });
-        }
-
-        function resetarFiltros() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(checkbox => checkbox.checked = false);
-            filtrarProdutos(); // Reexibe todos os produtos
-        }
-
-        // Adicione os tipos aos seus produtos existentes no HTML
-        document.addEventListener('DOMContentLoaded', () => {
-            const produtos = document.querySelectorAll('.produto');
-            produtos.forEach(produto => {
-                const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
-                if (nomeProduto.includes('colar')) produto.dataset.tipo = 'colar';
-                if (nomeProduto.includes('anel')) produto.dataset.tipo = 'anel';
-                if (nomeProduto.includes('brinco')) produto.dataset.tipo = 'brinco';
-                if (nomeProduto.includes('pulseira')) produto.dataset.tipo = 'pulseira';
-                if (nomeProduto.includes('argola')) produto.dataset.tipo = 'brinco'; // Para a argola ser filtrada como brinco
-            });
-            filtrarProdutos(); // Garante que a filtragem inicial mostre todos os produtos
-        });
-    </script>
-</body>
->>>>>>> 4887acdbc1c0eb9fa0b0d3c78df2d5f8db2de270
 </html>
