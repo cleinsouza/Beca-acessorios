@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-/* Reset básico */
 /* Reset básico */
 * {
     margin: 0;
@@ -11,6 +9,190 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+}
+
+/* Estilos para o container principal */
+.conteudo-principal {
+    display: flex; /* Alinha os filhos (filtros e catálogo) lado a lado */
+    gap: 20px; /* Espaçamento entre filtros e catálogo */
+    align-items: flex-start; /* Alinha os itens no topo */
+    margin-bottom: 20px; /* Espaçamento abaixo do container principal */
+}
+
+/* Estilos para a seção do carrinho */
+#carrinho {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#carrinho h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista-carrinho li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#carrinho p strong {
+    font-weight: bold;
+}
+
+#carrinho button {
+    padding: 12px 20px;
+    background-color: #28a745; /* Cor verde para ação positiva */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#carrinho button:hover {
+    background-color: #1e7e34;
+}
+
+/* Estilos para a seção de filtros */
+#filtros {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Ajuste a largura conforme necessário */
+}
+
+
+#filtros h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.filtro-grupo {
+    margin-bottom: 15px;
+}
+
+.filtro-grupo h3 {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.filtro-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.filtro-grupo input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+#filtros button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+#filtros button:first-of-type { /* Estilo para o botão "Filtrar" */
+    background-color: #6a5acd;
+    color: white;
+}
+
+#filtros button:first-of-type:hover {
+    background-color: #0056b3;
+}
+
+#filtros button:last-of-type { /* Estilo para o botão "Limpar Filtros" */
+    background-color: #6a5acd;
+    color: white;
+}
+
+#filtros button:last-of-type:hover {
+    background-color: #545b62;
+}
+
+/* Estilos para a seção de contato */
+#contato {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contato h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+#contato input[type="text"],
+#contato input[type="number"],
+#contato textarea {
+    width: calc(100% - 16px); /* Considerar o padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#contato textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+#contato button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #007bff; /* Cor azul para ação principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contato button[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
 header {
@@ -48,40 +230,78 @@ section {
     margin-bottom: 40px;
 }
 
-#catalogo {
-    display: flex; /* Para alinhar os produtos lado a lado */
-    flex-wrap: wrap; /* Para quebrar para a próxima linha em telas menores */
-    gap: 20px; /* Espaçamento entre os produtos */
-    flex-direction: column-reverse;
-}
 
+
+/* Estilos para a seção do catálogo */
+    #catalogo {
+ display: grid; /* Organiza os produtos em uma grade */
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Cria colunas responsivas *      gap: 15px; /* Espaçamento entre os produtos */
+ justify-content: center; /* Centraliza os blocos de produtos horizontalmente */
+ gap: 20px;
+ }
+/* Estilos para cada produto */
 .produto {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    margin-bottom: 20px; /* Espaçamento vertical entre os produtos (quando em coluna) */
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Aproximadamente 3 produtos por linha */
-    box-sizing: border-box; /* Garante que padding e border não afetem a largura */
-    display: flex; /* Para organizar o conteúdo INTERNO do produto */
-    flex-direction: column; /* Nome, preço e botão em coluna */
-    align-items: center; /* Centralizar o conteúdo interno horizontalmente */
-}
-
-.produto h3 {
-    margin-bottom: 10px;
-}
-
-.produto p {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    /* Removendo a altura fixa */
+    height: auto;
 }
 
 .produto img {
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    /* Removendo o flex-grow e o alinhamento flex para a imagem */
+}
+
+.produto h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto p {
+    color: #777;
+    margin-bottom: 8px;
+    font-size: 0.8em;
+}
+
+.produto .produto-info { /* Novo container para agrupar título e preço */
+    flex-grow: 1; /* Permite que a informação do produto ocupe o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha o texto verticalmente no espaço disponível */
+}
+
+.produto button {
+    padding: 8px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+    /* Removendo o margin-top: auto; inicialmente */
+}
+
+.produto-button-container { /* Novo container para o botão */
+    margin-top: 10px; /* Adiciona um espaço acima do botão */
+}
+
+.produto button:hover {
+    background-color: #0056b3;
 }
 
 button {
@@ -176,233 +396,4 @@ footer {
 
 #filtros button:hover {
     background-color: #0056b3;
-}
-
-/* Estilos para telas menores */
-@media (max-width: 768px) {
-    .produto {
-        width: 100%; /* Um produto por linha em telas menores */
-    }
-
-    nav ul {
-        flex-direction: column; /* Navegação em coluna em telas menores */
-        align-items: center; /* Centralizar itens da navegação em telas menores */
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    #filtros {
-        align-items: stretch; /* Esticar os filtros para a largura total em telas menores */
-    }
-
-    #filtros button {
-        width: 100%; /* Botões de filtro ocupam a largura total em telas menores */
-        margin-right: 0;
-    }
-=======
-/* Reset básico */
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background: transparent;
-    color: #5a4db1;
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Para alinhar os itens da navegação horizontalmente */
-    justify-content: center; /* Centralizar os itens da navegação */
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #5a4db1;
-    text-decoration: none;
-}
-
-h1, h2 {
-    margin-bottom: 20px;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-#catalogo {
-    display: flex; /* Para alinhar os produtos lado a lado */
-    flex-wrap: wrap; /* Para quebrar para a próxima linha em telas menores */
-    gap: 20px; /* Espaçamento entre os produtos */
-    flex-direction: column-reverse;
-}
-
-.produto {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px; /* Espaçamento vertical entre os produtos (quando em coluna) */
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Aproximadamente 3 produtos por linha */
-    box-sizing: border-box; /* Garante que padding e border não afetem a largura */
-    display: flex; /* Para organizar o conteúdo INTERNO do produto */
-    flex-direction: column; /* Nome, preço e botão em coluna */
-    align-items: center; /* Centralizar o conteúdo interno horizontalmente */
-}
-
-.produto h3 {
-    margin-bottom: 10px;
-}
-
-.produto p {
-    margin-bottom: 15px;
-}
-
-.produto img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #6a5acd; /* Cor roxa */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #5a4db1; /* Cor roxa mais escura */
-}
-
-form {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-form input[type="submit"] {
-    background-color: #6a5acd; /* Cor roxa */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form input[type="submit"]:hover {
-    background-color: #5a4db1; /* Cor roxa mais escura */
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: transparent;
-    color: black;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-#filtros {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    display: flex; /* Para alinhar os grupos de filtros e botões horizontalmente */
-    flex-direction: column; /* Alinhar os elementos internos verticalmente por padrão */
-    align-items: flex-start; /* Alinhar os itens à esquerda */
-    gap: 15px; /* Espaçamento entre os grupos de filtros e botões */
-}
-
-.filtro-grupo {
-    margin-bottom: 0; /* Removi a margem inferior duplicada */
-}
-
-.filtro-grupo h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-#filtros button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-#filtros button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para telas menores */
-@media (max-width: 768px) {
-    .produto {
-        width: 100%; /* Um produto por linha em telas menores */
-    }
-
-    nav ul {
-        flex-direction: column; /* Navegação em coluna em telas menores */
-        align-items: center; /* Centralizar itens da navegação em telas menores */
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    #filtros {
-        align-items: stretch; /* Esticar os filtros para a largura total em telas menores */
-    }
-
-    #filtros button {
-        width: 100%; /* Botões de filtro ocupam a largura total em telas menores */
-        margin-right: 0;
-    }
->>>>>>> 4887acdbc1c0eb9fa0b0d3c78df2d5f8db2de270
-}
+} 
