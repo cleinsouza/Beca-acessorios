@@ -1,0 +1,427 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos para o container principal */
+.conteudo-principal {
+    display: flex; /* Alinha os filhos (filtros e catálogo) lado a lado */
+    gap: 20px; /* Espaçamento entre filtros e catálogo */
+    align-items: flex-start; /* Alinha os itens no topo */
+    margin-bottom: 20px; /* Espaçamento abaixo do container principal */
+}
+
+/* Estilos para a seção do carrinho */
+#carrinho {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#carrinho h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista-carrinho li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#carrinho p strong {
+    font-weight: bold;
+}
+
+#carrinho button {
+    background-image: none;
+    background-size: initial; /
+    
+}
+
+/* Estilos para a tag <img> do ícone da sacola */
+.icone-carrinho { /* Use a classe que você adicionou na tag <img> */
+    width: 24px;  /* Largura desejada para o ícone */
+    height: 24px; /* Altura desejada para o ícone */
+    /* vertical-align: middle; /* Pode ser útil se não usar display: flex no pai */
+}
+
+#carrinho button:hover {
+    background-color: #984bf0;
+}
+
+/* Estilos para a seção de filtros */
+#filtros {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Ajuste a largura conforme necessário */
+}
+
+
+#filtros h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.filtro-grupo {
+    margin-bottom: 15px;
+}
+
+.filtro-grupo h3 {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.filtro-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.filtro-grupo input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+#filtros button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+#filtros button:first-of-type { /* Estilo para o botão "Filtrar" */
+    background-color: #ffbbf0;
+    color: white;
+}
+
+#filtros button:first-of-type:hover {
+    background-color: #fc99e6;
+}
+
+#filtros button:last-of-type { /* Estilo para o botão "Limpar Filtros" */
+    background-color: #ffbbf0;
+    color: white;
+}
+
+#filtros button:last-of-type:hover {
+    background-color: #fc99e6;
+}
+
+/* Estilos para a seção de contato */
+#contato {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contato h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+#contato input[type="text"],
+#contato input[type="number"],
+#contato textarea {
+    width: calc(100% - 16px); /* Considerar o padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#contato textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+#contato button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #b378f7; /* Cor azul para ação principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contato button[type="submit"]:hover {
+    background-color: #984bf0;
+}
+
+
+header {
+    background-color: transparent; /* Cor azul escura do cabeçalho */
+    color: white; /* Cor do texto (se houver) */
+    padding: 2px; /* Ajuste o padding vertical conforme necessário */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    flex-direction: column;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 200px; /* Largura máxima do conteúdo do cabeçalho */
+    margin: 1px; /* Centraliza o container */
+    display: flex;
+    justify-content: center; /* Centraliza a logo dentro do container */
+    height: 260px;
+    padding: 20px;
+}
+
+
+
+.header-center .logo {
+    height: 50px; /* Ajuste a altura da logo conforme necessário */
+    /* Você pode adicionar mais estilos à logo aqui, como largura máxima, etc. */
+}
+
+
+nav a {
+    color: purple;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav ul {
+    color: #d7a5eb;
+    list-style: none;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #d7a5eb;
+    align-items: center;
+    text-decoration: none;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    border-radius: 0%;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+
+
+/* Estilos para a seção do catálogo */
+    #catalogo {
+ display: grid; /* Organiza os produtos em uma grade */
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Cria colunas responsivas *      gap: 15px; /* Espaçamento entre os produtos */
+ justify-content: center; /* Centraliza os blocos de produtos horizontalmente */
+ gap: 20px;
+ }
+/* Estilos para cada produto */
+.produto {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* Removendo a altura fixa */
+    height: auto;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    /* Removendo o flex-grow e o alinhamento flex para a imagem */
+}
+
+.produto h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto p {
+    color: #777;
+    margin-bottom: 8px;
+    font-size: 0.8em;
+}
+
+.produto .produto-info { /* Novo container para agrupar título e preço */
+    flex-grow: 1; /* Permite que a informação do produto ocupe o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha o texto verticalmente no espaço disponível */
+}
+
+.produto button {
+    padding: 8px 10px;
+    background-color: #d7a5eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+    /* Removendo o margin-top: auto; inicialmente */
+}
+
+.produto-button-container { /* Novo container para o botão */
+    margin-top: 10px; /* Adiciona um espaço acima do botão */
+}
+
+button {
+    background-color: #6a5acd; /* Cor roxa */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c879e7; /* Cor roxa mais escura */
+}
+
+form {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #6a5acd; /* Cor roxa */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #5a4db1; /* Cor roxa mais escura */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+    color: black;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#filtros {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex; /* Para alinhar os grupos de filtros e botões horizontalmente */
+    flex-direction: column; /* Alinhar os elementos internos verticalmente por padrão */
+    align-items: flex-start; /* Alinhar os itens à esquerda */
+    gap: 15px; /* Espaçamento entre os grupos de filtros e botões */
+}
+
+.filtro-grupo {
+    margin-bottom: 0; /* Removi a margem inferior duplicada */
+}
+
+.filtro-grupo h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#filtros button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    color: white;
+    cursor: pointer;
+}
+
+#filtros button:hover {
+    background-color: #0056b3;
+} 
