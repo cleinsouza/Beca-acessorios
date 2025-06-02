@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja da Beca</title>
+    <title>Beca Acessórios</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href=".img/favicon.png.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <h1>Loja da Beca</h1>
+        <h1>
+            <div class="header-container">
+            
+            <img src=".img/11zon_cropped.png" alt="">
+
+            </h1>
         <nav>
             <ul>
                 <li><a href="https://drive.google.com/drive/folders/14Ec2ghEBx_7R4I7sXmJRGnd6W1FrvLWx" target="_blank">Acesse aqui para ver as peças com mais detalhes!</a></li>
-                <li><a href="#carrinho">Carrinho (<span id="carrinho-quantidade">0</span>)</a></li>
-                <li><a href="https://wa.me/8494740642?text=Olá%2C%20quero%20ver%20seu%20catálogo" target="_blank">Contato</a></li>
+                <li><a href="#carrinho" id= "carrinho-button">
+                     <img src=".img/sacolinha.png.png" alt=""> (<span id="carrinho-quantidade">0</span>)</a></li>
+                <li><a href="https://wa.me/8494740642?text=Olá%2C%20quero%20ver%20seu%20catálogo" target="_blank">Contato Para Duvidas!</a></li>
             </ul>
         </nav>
     </header>
@@ -26,8 +33,8 @@
                 <h3>Tipo de Joia</h3>
                 <label><input type="checkbox" name="tipo" value="brinco"> Brincos</label><br>
                 <label><input type="checkbox" name="tipo" value="colar"> Colares</label><br>
-                <label><input type="checkbox" name="tipo" value="aneis"> Aneis</label><br>
                 <label><input type="checkbox" name="tipo" value="pulseira"> Pulseiras</label><br>
+                <label><input type="checkbox" name="tipo" value="porta joias"> Porta joias</label><br>
             </div>
             <button onclick="filtrarProdutos()">Filtrar</button>
             <button onclick="resetarFiltros()">Limpar Filtros</button>
@@ -58,15 +65,6 @@
                     <div class="produto-content">
                         <img src=".img/WhatsApp Image 2025-05-07 at 20.28.36.jpeg" alt="Argola Delicada">
                         <h3>Brinco Argola Delicada</h3>
-                        <p>Preço: R$ 24,99</p>
-                    </div>
-                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
-                </div>
-            
-                <div class="produto" data-tipo="brincos" data-nome="Brinco Argola Diamantada" data-preco="24.99">
-                    <div class="produto-content">
-                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.53.jpeg" alt="Argola Diamantada">
-                        <h3>Brinco Argola Diamantada</h3>
                         <p>Preço: R$ 24,99</p>
                     </div>
                     <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
@@ -108,15 +106,6 @@
                     <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
                 </div>
             
-                <div class="produto" data-tipo="brincos" data-nome="Brinco Trevo" data-preco="35.99">
-                    <div class="produto-content">
-                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.45.jpeg" alt="brinco Trevo">
-                        <h3>Brinco Trevo </h3>
-                        <p>Preço: R$ 35,99</p>
-                    </div>
-                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
-                </div>
-            
                 <div class="produto" data-tipo="brincos" data-nome="Brinco Trio Argolas" data-preco="65.99">
                     <div class="produto-content">
                         <img src=".img/WhatsApp Image 2025-05-07 at 20.28.49.jpeg" alt="brinco Trio">
@@ -126,14 +115,6 @@
                     <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
                 </div>
             
-                <div class="produto" data-tipo="brincos" data-nome="Trio De Brincos" data-preco="38.99">
-                    <div class="produto-content">
-                        <img src=".img/WhatsApp Image 2025-05-07 at 20.28.51.jpeg" alt="Trio">
-                        <h3>Trio De Brincos </h3>
-                        <p>Preço: R$ 38,99</p>
-                    </div>
-                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
-                </div>
                 <div class="produto" data-tipo="colar" data-nome="Colar Choker Cartier Fina" data-preco="35.99">
                     <img src=".img/Choker-Cartier-fina-_-35_99.jpg" alt="Choker">
                     <div class="produto-content">
@@ -225,15 +206,6 @@
                     <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
                 </div>
             
-                <div class="produto" data-tipo="pulseira" data-nome="Pulseira Correntaria" data-preco="26.99">
-                    <img src=".img/Pulseira correntaria _ 26,99.jpg" alt="Pulseira Correntaria">
-                    <div class="produto-content">
-                        <h3>Pulseira Correntaria </h3>
-                        <p>Preço: R$ 26,99</p>
-                    </div>
-                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
-                </div>
-            
                 <div class="produto" data-tipo="pulseira" data-nome="Pulseira De Berloques" data-preco="67.99">
                     <img src=".img/Pulseira de berloques _ 67,99.jpg" alt="Pulseira de berloques">
                     <div class="produto-content">
@@ -278,12 +250,21 @@
                    </div>
                    <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
            </div>
+           
+           <div class="produto" data-tipo="pulseira" data-nome="Pulseira C/3 Berloques" data-preco="45.99">
+                    <img src=".img/Porta-joias-_-24_99-_2_.png" alt="porta joiass">
+                    <div class="produto-content">
+                        <h3>Porta Joias</h3>
+                        <p>Preço: R$ 24,99</p>
+                   </div>
+                   <button onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+           </div>
          </section>
 
     </div>
 
-        <section id="carrinho">
-            <h2>Carrinho de Compras</h2>
+        <section id= "carrinho">
+            <h2>Carrinho De Compras</h2>
             <ul id="lista-carrinho">
                 </ul>
             <p>Total: R$ <span id="total-carrinho">0.00</span></p>
@@ -295,7 +276,11 @@
             <form id="form-contato" onsubmit="enviarWhatsAppCarrinho(event)">
                 <label for="nome-carrinho">Nome:</label>
                 <input type="text" id="nome-carrinho" required>
-                <label for="rua-carrinho">Rua:</label>
+                
+                <label for="forma-de-pagamento-carrinho">Forma de Pagamento:</label>
+                <input type="text" id="forma-de-pagamento-carrinho" required>
+    
+                <label for="rua-carrinho">Rua:</label>           
                 <input type="text" id="rua-carrinho" placeholder="Nome da Rua" required>
         
                 <label for="numero-carrinho">Número da Casa:</label>
@@ -309,7 +294,7 @@
         
                 <label for="bairro-carrinho">Bairro:</label>
                 <input type="text" id="bairro-carrinho" required>
-    
+
                 <label for="itens-carrinho">Itens do Carrinho:</label>
                 <textarea id="itens-carrinho" rows="5" readonly></textarea>
     
@@ -322,12 +307,25 @@
     
     
     <footer>
-        <p>&copy; 2025 Loja de Joias. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Loja de Joias. Todos os direitos reservados.
+            feito pelo Souza :)
+        </p>
     </footer>
 
-    <script>
-  let carrinho = [];
+<script>
+// ===============================
+//  Variáveis Globais
+// ===============================
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
+// ===============================
+//  Funções do Carrinho
+// ===============================
+
+/**
+ * Adiciona um produto ao carrinho.
+ * @param {HTMLElement} botao - O botão que foi clicado.
+ */
 function adicionarAoCarrinho(botao) {
     const produtoDiv = botao.parentNode;
     const nome = produtoDiv.dataset.nome;
@@ -345,9 +343,13 @@ function adicionarAoCarrinho(botao) {
         carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
     }
 
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarCarrinho();
 }
 
+/**
+ * Atualiza a exibição do carrinho.
+ */
 function atualizarCarrinho() {
     const listaCarrinho = document.getElementById('lista-carrinho');
     const totalCarrinhoSpan = document.getElementById('total-carrinho');
@@ -360,6 +362,18 @@ function atualizarCarrinho() {
     carrinho.forEach(item => {
         const listItem = document.createElement('li');
         listItem.textContent = `${item.nome} x${item.quantidade} - R$ ${(item.preco * item.quantidade).toFixed(2)}`;
+
+        // Cria o botão de excluir
+        const botaoExcluir = document.createElement('button');
+        botaoExcluir.textContent = 'Excluir';
+        botaoExcluir.classList.add('excluir-item'); // Adiciona uma classe para estilo, se necessário
+        botaoExcluir.setAttribute('aria-label', `Excluir ${item.nome} do carrinho`); //Melhora acessibilidade
+        botaoExcluir.onclick = function() { // Adiciona a função de exclusão ao botão
+            removerDoCarrinho(item.nome); // Passa o nome do produto para removerDoCarrinho
+        };
+
+        listItem.appendChild(botaoExcluir); // Adiciona o botão à linha do item
+
         listaCarrinho.appendChild(listItem);
         total += item.preco * item.quantidade;
         quantidadeTotal += item.quantidade;
@@ -369,6 +383,19 @@ function atualizarCarrinho() {
     carrinhoQuantidadeSpan.textContent = quantidadeTotal;
 }
 
+/**
+ * Remove um item do carrinho pelo nome do produto.
+ * @param {string} nomeProduto - O nome do produto a ser removido.
+ */
+function removerDoCarrinho(nomeProduto) {
+    carrinho = carrinho.filter(item => item.nome !== nomeProduto); // Filtra o item a ser removido
+    localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o LocalStorage
+    atualizarCarrinho(); // Atualiza a exibição do carrinho
+}
+
+/**
+ * Conclui a compra do carrinho, exibindo os detalhes do pedido para o usuário.
+ */
 function concluirCompraCarrinho() {
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio.");
@@ -391,21 +418,56 @@ function concluirCompraCarrinho() {
     window.scrollTo(0, document.getElementById('contato').offsetTop);
 }
 
+/**
+ * Envia os detalhes do pedido via WhatsApp.
+ * @param {Event} event - O evento do formulário.
+ */
 function enviarWhatsAppCarrinho(event) {
-    event.preventDefault();
+    event.preventDefault(); // Impedir o envio padrão do formulário
 
     const nome = document.getElementById('nome-carrinho').value;
-    const numero = document.getElementById('numero-carrinho').value;
+    const rua = document.getElementById('rua-carrinho').value;
+    const numeroCasa = document.getElementById('numero-carrinho').value;
+    const pontoReferencia = document.getElementById('ponto-referencia-carrinho').value;
+    const complemento = document.getElementById('complemento-carrinho').value;
+    const bairro = document.getElementById('bairro-carrinho').value;
+    const formaPagamento = document.getElementById('forma-de-pagamento-carrinho').value;
     const itens = document.getElementById('itens-carrinho').value;
     const total = document.getElementById('total-carrinho-final').value;
 
-    const mensagem = `Olá, meu nome é ${nome}. Gostaria de fazer o seguinte pedido:\n\n${itens}\nTotal: ${total}\n\nMeu número de contato é ${numero}.`;
+    let mensagem = `Olá, meu nome é ${nome}. Gostaria de fazer o seguinte pedido:\n\n${itens}\n total: ${total}\n\n Forma de pagamento: ${formaPagamento}\n\nMeu endereço para entrega é:`;
+
+    
+    if (rua) {
+        mensagem += `\nRua: ${rua}`;
+    }
+    
+    if (numeroCasa) {
+        mensagem += `\nNúmero: ${numeroCasa}`;
+    }
+        
+    if (pontoReferencia) {
+        mensagem += `\nPonto de Referência: ${pontoReferencia}`;
+    }
+    if (complemento) {
+        mensagem += `\nComplemento: ${complemento}`;
+    }
+    
+    mensagem += `\nBairro: ${bairro}`;
+
     const numeroWhatsApp = '8494740642';
     const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
     window.open(linkWhatsApp, '_blank');
 }
 
+// ===============================
+// Funções de Filtro
+// ===============================
+
+/**
+ * Filtra os produtos exibidos com base nos tipos selecionados.
+ */
 function filtrarProdutos() {
     const filtrosTipo = Array.from(document.querySelectorAll('input[name="tipo"]:checked')).map(checkbox => checkbox.value);
     const produtos = document.querySelectorAll('.produto');
@@ -415,35 +477,46 @@ function filtrarProdutos() {
         let exibir = false;
 
         if (filtrosTipo.length === 0) {
-            exibir = true; // Se nenhum filtro estiver selecionado, exibe todos
+            exibir = true;
         } else if (tipoProduto && filtrosTipo.includes(tipoProduto)) {
-            exibir = true; // Exibe se o tipo do produto estiver entre os filtros
+            exibir = true;
         }
 
         produto.style.display = exibir ? 'block' : 'none';
     });
 }
 
+/**
+ * Reseta os filtros de produto, exibindo todos os produtos.
+ */
 function resetarFiltros() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
-    filtrarProdutos(); // Reexibe todos os produtos
+    filtrarProdutos();
 }
+
+// ===============================
+// Inicialização
+// ===============================
 
 document.addEventListener('DOMContentLoaded', () => {
     const produtos = document.querySelectorAll('.produto');
     produtos.forEach(produto => {
         const nomeProduto = produto.querySelector('h3').textContent.toLowerCase();
         if (nomeProduto.includes('colar')) produto.dataset.tipo = 'colar';
-        if (nomeProduto.includes('aneis')) produto.dataset.tipo = 'aneis';
         if (nomeProduto.includes('brinco')) produto.dataset.tipo = 'brinco';
         if (nomeProduto.includes('pulseira')) produto.dataset.tipo = 'pulseira';
-        if (nomeProduto.includes('argola')) produto.dataset.tipo = 'brinco'; // Para a argola ser filtrada como brinco
+        if (nomeProduto.includes('argola')) produto.dataset.tipo = 'brinco';
         if (nomeProduto.includes('berloque')) produto.dataset.tipo = 'pulseira';
+        if (nomeProduto.includes('porta joias')) produto.dataset.tipo = 'porta joias';
     });
-    filtrarProdutos(); // Garante que a filtragem inicial mostre todos os produtos
-    atualizarCarrinho(); // Inicializa a exibição do carrinho
+
+    filtrarProdutos();
+    atualizarCarrinho();
+    if (carrinho.length > 0) {
+        atualizarCarrinho();
+    }
 });
-</script>a
+</script>
 </body>
 </html>

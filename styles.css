@@ -6,7 +6,6 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -61,18 +60,20 @@ body {
 }
 
 #carrinho button {
-    padding: 12px 20px;
-    background-color: #28a745; /* Cor verde para ação positiva */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    background-image: none;
+    background-size: initial; /
+    
+}
+
+/* Estilos para a tag <img> do ícone da sacola */
+.icone-carrinho { /* Use a classe que você adicionou na tag <img> */
+    width: 24px;  /* Largura desejada para o ícone */
+    height: 24px; /* Altura desejada para o ícone */
+    /* vertical-align: middle; /* Pode ser útil se não usar display: flex no pai */
 }
 
 #carrinho button:hover {
-    background-color: #1e7e34;
+    background-color: #984bf0;
 }
 
 /* Estilos para a seção de filtros */
@@ -124,21 +125,21 @@ body {
 }
 
 #filtros button:first-of-type { /* Estilo para o botão "Filtrar" */
-    background-color: #6a5acd;
+    background-color: #ffbbf0;
     color: white;
 }
 
 #filtros button:first-of-type:hover {
-    background-color: #0056b3;
+    background-color: #fc99e6;
 }
 
 #filtros button:last-of-type { /* Estilo para o botão "Limpar Filtros" */
-    background-color: #6a5acd;
+    background-color: #ffbbf0;
     color: white;
 }
 
 #filtros button:last-of-type:hover {
-    background-color: #545b62;
+    background-color: #fc99e6;
 }
 
 /* Estilos para a seção de contato */
@@ -182,7 +183,7 @@ body {
 
 #contato button[type="submit"] {
     padding: 12px 20px;
-    background-color: #007bff; /* Cor azul para ação principal */
+    background-color: #b378f7; /* Cor azul para ação principal */
     color: white;
     border: none;
     border-radius: 5px;
@@ -192,21 +193,50 @@ body {
 }
 
 #contato button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #984bf0;
 }
 
+
 header {
-    background: transparent;
-    color: #5a4db1;
+    background-color: transparent; /* Cor azul escura do cabeçalho */
+    color: white; /* Cor do texto (se houver) */
+    padding: 2px; /* Ajuste o padding vertical conforme necessário */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    flex-direction: column;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 200px; /* Largura máxima do conteúdo do cabeçalho */
+    margin: 1px; /* Centraliza o container */
+    display: flex;
+    justify-content: center; /* Centraliza a logo dentro do container */
+    height: 260px;
     padding: 20px;
-    text-align: center;
+}
+
+
+
+.header-center .logo {
+    height: 50px; /* Ajuste a altura da logo conforme necessário */
+    /* Você pode adicionar mais estilos à logo aqui, como largura máxima, etc. */
+}
+
+
+nav a {
+    color: purple;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
 nav ul {
+    color: #d7a5eb;
     list-style: none;
-    padding: 0;
-    display: flex; /* Para alinhar os itens da navegação horizontalmente */
-    justify-content: center; /* Centralizar os itens da navegação */
+    padding: 1px;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
@@ -214,12 +244,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #5a4db1;
+    color: #d7a5eb;
+    align-items: center;
     text-decoration: none;
 }
 
 h1, h2 {
     margin-bottom: 20px;
+    border-radius: 0%;
 }
 
 main {
@@ -286,7 +318,7 @@ section {
 
 .produto button {
     padding: 8px 10px;
-    background-color: #007bff;
+    background-color: #d7a5eb;
     color: white;
     border: none;
     border-radius: 5px;
@@ -300,10 +332,6 @@ section {
     margin-top: 10px; /* Adiciona um espaço acima do botão */
 }
 
-.produto button:hover {
-    background-color: #0056b3;
-}
-
 button {
     background-color: #6a5acd; /* Cor roxa */
     color: white;
@@ -315,7 +343,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a4db1; /* Cor roxa mais escura */
+    background-color: #c879e7; /* Cor roxa mais escura */
 }
 
 form {
@@ -389,7 +417,7 @@ footer {
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #fdfdfd;
     color: white;
     cursor: pointer;
 }
